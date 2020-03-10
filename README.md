@@ -16,6 +16,7 @@ https://docs.google.com/spreadsheets/d/18hOUO8Pj5KuFky8RJOJ9Z0tHWb-3exsNHR3-6glS
 
 
 I. Where the data is from
+
 We have scraped our data from pages on opensecrets.org, a site which aggregates
 campaign finance and lobbying data from various sources (including the Federal
 Election Commission and lobbying reports). OpenSecrets is part of the Center
@@ -25,6 +26,7 @@ on money in politics to inform and engage Americans, champion transparency,
 and expose disproportionate or undue influence on public policy.”
 
 II. Format of the data
+
 The data is stored in a SQL database and is divided into two tables:
 pac_donations and candidate_donations. The formats of each are as follows:
 
