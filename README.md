@@ -7,8 +7,6 @@ Ragna Agerup (ragerup), and Shira Abramovich (sabramo1).
 
 -------------------------------------------------------------------------------
 
-Link to data:
-https://github.com/ragnaag/Data-Science-Final
 Our data is in tbm_data.db
 
 Sample of data:
