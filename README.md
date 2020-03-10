@@ -40,14 +40,14 @@ II. Format of the data
 		iii-xxvi: for each election cycle(2010, 2012, 2014, 2016, 2018, and 2020), we
 		have four recurring columns specified below:
 		   Affiliate: varchar(255), the affiliate indicates an organization that
-			   the PACs are associated with. If there is no affiliate, it is specified
-				 as null.
+		   		the PACs are associated with. If there is no affiliate, it is specified
+				as null.
 		   year-Total: integer, Total documents the total amount of donations from
-			   a PAC during a specific year.
+		   		a PAC during a specific year.
 		   year-Dems: integer, Dems documents the total amount of donations from a
-			   PAC to democratic candidates during a specific year.
+			   	PAC to democratic candidates during a specific year.
 		   year-Repub: Repub documents the total amount of donations from a PAC to
-			   republican candidates during a specific year.
+			   	republican candidates during a specific year.
 
 	candidate_donations (9 columns, 13473 rows):
 		i. donation_id: an auto-generated auto-incremented key, an integer,
@@ -57,8 +57,8 @@ II. Format of the data
 			taken from the URL. Because multiple company names can correspond to the
 			same ID in the case of a name change or buyout, this is not a unique foreign key.
 
-		iii. company_name: the company name, a /Users/ragnaag/Downloads/data-spec.txtvarchar(255), a foreign key that
-			references the pacname column in the pac_donations table and refers
+		iii. company_name: the company name, a /Users/ragnaag/Downloads/data-spec.txtvarchar(255), 
+			a foreign key that references the pacname column in the pac_donations table and refers
 			to the name of the PAC which is donating.
 
 		iv. candidate_name: the name of the candidate, a varchar(255), with the format
@@ -76,5 +76,5 @@ II. Format of the data
 
 		viii. amount: the dollar amount of the donation, an integer.
 
- 	ix. year: the year or cycle of the election. The options are 2010, 2012,
-	    2014, 2016, 2018, and 2020.
+ 		ix. year: the year or cycle of the election. The options are 2010, 2012,
+	   		2014, 2016, 2018, and 2020.
