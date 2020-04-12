@@ -69,10 +69,16 @@ if __name__=='__main__':
             is_dem = [0]*xlen
             is_repub = [0]*xlen
 
-            region = ['']*xlen
+            northeast = [0]*xlen
+            midwest = [0]*xlen
+            west = [0]*xlen
+            south = [0]*xlen
+
+            # region = ['']*xlen
 
             modified_year = [0]*xlen
             is_after_2016 = [0]*xlen
+            is_2020 = [0]*xlen
 
             for i in range(xlen):
                 # parse out x0 = race into separate lists
@@ -93,15 +99,15 @@ if __name__=='__main__':
                 # regions: 0 = Northeast; 1 = Midwest; 2 = West; 3 = South
                 state = X[2]
                 if state[i] in ['CT', 'ME', 'MA', 'NH', 'RI', 'VT', 'NJ', 'NY', 'PA']:
-                    region[i] = 0
+                    northeast[i] = 1
                 elif state[i] in ['ND', 'SD', 'NE', 'KS', 'MN', 'IA', 'MO', \
                 'IL', 'WI', 'IN', 'OH', 'MI']:
-                    region[i] = 1
+                    midwest[i] = 1
                 elif state[i] in ['WA', 'MT', 'WY', 'ID', 'OR', 'CA', 'NV', \
                 'UT', 'CO', 'NM', 'AZ']:
-                    region[i] = 2
-                else:
-                    region[i] = 3
+                    west[i] = 1
+                elif state[i] != '':
+                    south[i] = 1
 
                 # parse out x3 = year to modified year (subtract 2010) and is_after_2016
                 year = X[3]
@@ -109,8 +115,11 @@ if __name__=='__main__':
                 modified_year[i] = nuyr
                 if nuyr > 6:
                     is_after_2016[i] = 1
+                if nuyr == 10:
+                    is_2020[i] = 1
             # insert is_house, is_senate, region, is_after_2016, modified year to X list
-            X = [is_house, is_senate, is_dem, is_repub, region, modified_year, is_after_2016]
+            X = [modified_year, is_after_2016, is_house, is_senate, is_dem, \
+            is_repub, northeast, midwest, south, west, is_2020]
             # change dimensions of list - yea super hacky but it works?
             xList = []
             for i in range(xlen):
@@ -123,7 +132,7 @@ if __name__=='__main__':
 
 
     X, y = load_file("../data/candidate_donations.csv")
-    sm.add_constant(X)
+    X = sm.add_constant(X)
     # print(X)
 
 
