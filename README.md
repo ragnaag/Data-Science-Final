@@ -2,7 +2,7 @@
 
 
 This data was gathered for Tech Money Busters' final project for CS1951a (Spr2020).
-Big Tech Busters is Jacob DiSpirito (jdispiri), Lauren Yang (kyang28),
+Tech Money Busters is Jacob DiSpirito (jdispiri), Lauren Yang (kyang28),
 Ragna Agerup (ragerup), and Shira Abramovich (sabramo1).
 
 -------------------------------------------------------------------------------
